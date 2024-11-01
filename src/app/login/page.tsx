@@ -23,7 +23,7 @@ const LoginPage = () => {
       setError(null);
       window.dispatchEvent(new Event("storage"));
       router.replace("/dashboard");
-    } catch (error) {
+    } catch {
       setError("Invalid email or password");
     }
   };
