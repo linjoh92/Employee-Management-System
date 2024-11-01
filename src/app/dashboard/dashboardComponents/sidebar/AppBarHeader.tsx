@@ -38,7 +38,7 @@ const AppBarHeader = ({
       {" "}
       {isTablet && (
         <IconButton edge="start" color="inherit" onClick={toggleSidebar}>
-          <MenuIcon />
+          <MenuIcon sx={{ fontSize: 30 }} />
         </IconButton>
       )}
       {!isTablet && (

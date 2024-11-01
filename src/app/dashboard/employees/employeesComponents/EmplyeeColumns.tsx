@@ -38,11 +38,13 @@ export function getColumns(
       flex: 1,
       editable: canEdit,
     },
+    {
+      field: "role",
+      headerName: "Role",
+      flex: 1,
+      editable: canEdit,
+    },
   ];
-
-  if (isTabletOrLarger && canViewAllEmployees) {
-    columns.push({ field: "role", headerName: "Role", flex: 1 });
-  }
 
   if (canEdit) {
     columns.push({

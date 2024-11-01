@@ -25,11 +25,21 @@ export default function LoginCard({
     <Box
       sx={{
         width: "100%",
-        maxWidth: 400,
+        maxWidth: 500,
         textAlign: "center",
       }}
     >
-      <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: "bold",
+          mb: 2,
+          fontSize: {
+            xs: "32px",
+            md: "42px",
+          },
+        }}
+      >
         Welcome!
       </Typography>
       <Box component="form" onSubmit={handleLogin}>

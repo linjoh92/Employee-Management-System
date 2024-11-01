@@ -26,7 +26,7 @@ export const BackgroundCircleTop = styled(Box)(({ theme }) => ({
 
 export const BackgroundCircleBottom = styled(Box)(({ theme }) => ({
   position: "absolute",
-  bottom: -50,
+  bottom: -60,
   right: -30,
   width: 150,
   height: 150,

@@ -54,7 +54,7 @@ const LoginPage = () => {
             error={error}
           />
         </Box>
-        <ImageComponent src="logoIcon_company.svg" width={100} />
+        <ImageComponent src="logoIcon_company.svg" width={110} />
       </LoginSection>
       <BackgroundSection>
         <ImageComponent

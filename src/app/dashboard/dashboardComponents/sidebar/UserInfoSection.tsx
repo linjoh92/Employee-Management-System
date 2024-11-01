@@ -19,28 +19,25 @@ const UserInfoSection = ({ user }: UserInfoSectionProps) => (
     }}
   >
     <StyledRoleBadge variant="body2">{user?.role}</StyledRoleBadge>
-    <Typography variant="h6" sx={{ fontWeight: "bold", mt: 1, mb: 0.5 }}>
+    <Typography variant="h6" sx={{ fontWeight: "bold", mt: 1.2, mb: 0.5 }}>
       {user?.name}
-    </Typography>
-    <Typography variant="body2" sx={{ opacity: 0.7, mb: 1 }}>
-      {user?.email}
     </Typography>
 
     <Divider
-      sx={{ my: 2, width: "90%", mx: "auto", bgcolor: "primary.main" }}
+      sx={{ my: 1, width: "90%", mx: "auto", bgcolor: "primary.main" }}
     />
     <UserInfoContainer>
       <BusinessIcon fontSize="small" sx={{ color: "primary.main" }} />
-      <Typography variant="body2">{user?.department}</Typography>
+      <Typography variant="body1">{user?.department}</Typography>
     </UserInfoContainer>
 
     <UserInfoContainer>
       <LocalDiningIcon fontSize="small" sx={{ color: "primary.main" }} />
-      <Typography variant="body2">{user?.foodPreference}</Typography>
+      <Typography variant="body1">{user?.foodPreference}</Typography>
     </UserInfoContainer>
 
     <Divider
-      sx={{ my: 2, width: "90%", mx: "auto", bgcolor: "primary.main" }}
+      sx={{ my: 1, width: "90%", mx: "auto", bgcolor: "primary.main" }}
     />
   </Box>
 );

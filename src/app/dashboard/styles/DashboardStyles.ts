@@ -5,12 +5,12 @@ export const DashboardContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: theme.spacing(4),
+  gap: theme.spacing(6),
 }));
 
 export const WelcomeSection = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: theme.spacing(1),
+  gap: theme.spacing(2),
 }));

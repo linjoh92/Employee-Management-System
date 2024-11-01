@@ -14,7 +14,7 @@ export const MainContent = styled("main")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   overflow: "auto",
-  padding: theme.spacing(1),
+  padding: theme.spacing(1.5),
   paddingTop: "85px",
   [theme.breakpoints.up("sm")]: {
     padding: theme.spacing(4),
@@ -25,7 +25,7 @@ export const MainContent = styled("main")(({ theme }) => ({
 export const BreadcrumbContainer = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: 70,
-  left: 10,
+  left: 12,
   [theme.breakpoints.up("sm")]: {
     top: 80,
     left: 30,

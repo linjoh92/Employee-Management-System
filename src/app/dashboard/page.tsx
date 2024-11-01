@@ -18,7 +18,17 @@ export default function DashboardPage() {
         <WelcomeSection>
           <ImageComponent src="Icon_company.svg" width={50} />
 
-          <Typography variant="h4" fontWeight="bold" textAlign="center">
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "bold",
+              textAlign: "center",
+              fontSize: {
+                xs: "32px",
+                md: "42px",
+              },
+            }}
+          >
             Welcome {user?.name}!
           </Typography>
         </WelcomeSection>
@@ -26,7 +36,7 @@ export default function DashboardPage() {
         <Box
           sx={{
             display: "flex",
-            gap: 1,
+            gap: 2,
             flexDirection: { xs: "column", sm: "row" },
           }}
         >

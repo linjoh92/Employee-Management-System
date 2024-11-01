@@ -62,34 +62,38 @@ export default function EmployeeDataGrid({
     : updatedEmployees.filter((emp) => emp.id === activeUser?.id);
 
   return (
-    <DataGrid
-      rows={displayEmployees}
-      columns={getColumns(
-        isTabletOrLarger,
-        canEdit,
-        canViewAllEmployees,
-        rowModesModel,
-        handleEditClick,
-        handleSaveClick,
-        handleCancelClick
-      )}
-      getRowId={(row: Employee) => row.id}
-      rowModesModel={rowModesModel}
-      processRowUpdate={processRowUpdate}
-      initialState={{
-        pagination: {
-          paginationModel: { pageSize: 10 },
-        },
-      }}
-      pageSizeOptions={[5, 10, 20, 50]}
-      pagination
-      sx={{
-        flexGrow: 1,
-        "& .MuiDataGrid-virtualScroller": {
-          minHeight: "100%",
-        },
-      }}
-      disableRowSelectionOnClick
-    />
+    <div style={{ overflowX: "auto", height: "100%" }}>
+      <DataGrid
+        rows={displayEmployees}
+        columns={getColumns(
+          isTabletOrLarger,
+          canEdit,
+          canViewAllEmployees,
+          rowModesModel,
+          handleEditClick,
+          handleSaveClick,
+          handleCancelClick
+        )}
+        getRowId={(row: Employee) => row.id}
+        rowModesModel={rowModesModel}
+        processRowUpdate={processRowUpdate}
+        initialState={{
+          pagination: {
+            paginationModel: { pageSize: 10 },
+          },
+        }}
+        pageSizeOptions={[5, 10, 20, 50]}
+        pagination
+        sx={{
+          flexGrow: 1,
+          height: "100%",
+          minWidth: 600,
+          "& .MuiDataGrid-virtualScroller": {
+            minHeight: "100%",
+          },
+        }}
+        disableRowSelectionOnClick
+      />
+    </div>
   );
 }
