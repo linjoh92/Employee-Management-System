@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -21,7 +20,9 @@ const LoginPage = () => {
     try {
       const user = await fetchUser(email, password);
       localStorage.setItem("loggedInUser", JSON.stringify(user));
-      router.push("/dashboard");
+      setError(null);
+      window.dispatchEvent(new Event("storage"));
+      router.replace("/dashboard");
     } catch (error) {
       setError("Invalid email or password");
     }

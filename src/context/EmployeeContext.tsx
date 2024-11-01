@@ -33,13 +33,13 @@ export const EmployeeProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const initializeData = async () => {
       const userData = localStorage.getItem("loggedInUser");
-      if (!userData) {
-        router.push("/login");
+      if (userData) {
+        const parsedUser = JSON.parse(userData) as Employee;
+        setUser(parsedUser);
+      } else {
+        router.replace("/login");
         return;
       }
-
-      const parsedUser = JSON.parse(userData) as Employee;
-      setUser(parsedUser);
 
       const savedEmployees = localStorage.getItem("employeesData");
       if (savedEmployees) {
@@ -47,7 +47,7 @@ export const EmployeeProvider = ({ children }: { children: ReactNode }) => {
         setEmployees(employeesData);
         filterEmployees(employeesData);
       } else {
-        const data = await fetchEmployees(); // Type is already Promise<Employee[]>
+        const data = await fetchEmployees();
         setEmployees(data);
         localStorage.setItem("employeesData", JSON.stringify(data));
         filterEmployees(data);
@@ -55,7 +55,16 @@ export const EmployeeProvider = ({ children }: { children: ReactNode }) => {
     };
 
     initializeData();
-  }, [router]);
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      const savedEmployees = localStorage.getItem("employeesData");
+      if (savedEmployees) {
+        setEmployees(JSON.parse(savedEmployees));
+      }
+    }
+  }, [user]);
 
   const filterEmployees = (employeeData: Employee[]) => {
     const filtered = searchTerm
@@ -72,7 +81,8 @@ export const EmployeeProvider = ({ children }: { children: ReactNode }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
-    router.push("/login");
+    setUser(null);
+    router.replace("/login");
   };
 
   return (

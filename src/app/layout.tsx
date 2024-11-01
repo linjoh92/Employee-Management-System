@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import ClientProviders from "./ClientProviders";
