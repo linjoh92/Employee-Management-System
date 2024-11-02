@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 import { useEmployeeContext } from "@/context/EmployeeContext";
 
 export default function EmployeesPage() {
-  const { user, filteredEmployees, setSearchTerm, handleLogout } =
+  const { user, filteredEmployees, searchTerm, setSearchTerm, handleLogout } =
     useEmployeeContext();
 
   return (
@@ -22,7 +22,7 @@ export default function EmployeesPage() {
       >
         <Box>
           <SearchField
-            searchTerm=""
+            searchTerm={searchTerm}
             handleSearch={(e) => setSearchTerm(e.target.value)}
           />
         </Box>
