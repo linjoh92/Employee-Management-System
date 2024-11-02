@@ -15,6 +15,7 @@ type EmployeeContextType = {
   user: Employee | null;
   employees: Employee[];
   filteredEmployees: Employee[];
+  searchTerm: string;
   setSearchTerm: (term: string) => void;
   handleLogout: () => void;
 };
@@ -68,8 +69,11 @@ export const EmployeeProvider = ({ children }: { children: ReactNode }) => {
 
   const filterEmployees = (employeeData: Employee[]) => {
     const filtered = searchTerm
-      ? employeeData.filter((emp) =>
-          emp.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ? employeeData.filter(
+          (emp) =>
+            emp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            emp.role.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            emp.department.toLowerCase().includes(searchTerm.toLowerCase())
         )
       : employeeData;
     setFilteredEmployees(filtered);
@@ -91,6 +95,7 @@ export const EmployeeProvider = ({ children }: { children: ReactNode }) => {
         user,
         employees,
         filteredEmployees,
+        searchTerm,
         setSearchTerm,
         handleLogout,
       }}

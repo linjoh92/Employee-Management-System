@@ -1,17 +1,14 @@
-"use client";
-
 import React from "react";
 import { TextField } from "@mui/material";
+import { useEmployeeContext } from "@/context/EmployeeContext"; // Adjust path if needed
 
-interface SearchFieldProps {
-  searchTerm: string;
-  handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
+export default function SearchField() {
+  const { searchTerm, setSearchTerm } = useEmployeeContext();
 
-export default function SearchField({
-  searchTerm,
-  handleSearch,
-}: SearchFieldProps) {
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <TextField
       label="Search by name, department or role"
