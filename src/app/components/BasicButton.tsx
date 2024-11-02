@@ -14,6 +14,7 @@ const BasicButton = ({ text, onClick, type = "button" }: BasicButtonProps) => {
       variant="contained"
       onClick={onClick}
       type={type}
+      aria-label={text}
       sx={{
         backgroundColor: "primary.main",
         fontWeight: 700,
