@@ -7,10 +7,6 @@ This **Employee Management System** is a frontend application built with **React
 - [Features](#features)
 - [Requirements](#requirements)
 - [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Role-Based Access](#role-based-access)
-- [Mock API and CRUD Operations](#mock-api-and-crud-operations)
 
 ---
 
